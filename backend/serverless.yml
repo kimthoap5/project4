@@ -56,7 +56,7 @@ functions:
       Action:
         - xray:PutTelemetryRecords
         - xray:PutTraceSegments        
-      Resource: "*"
+      Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.TODOS_TABLE}
 
   # TODO: Configure this function - 
   # Provide iamRoleStatements property for performing Actions on DynamoDB
